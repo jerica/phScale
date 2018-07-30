@@ -1,5 +1,15 @@
 class CompaniesController < ApplicationController
   def index
+    
+    
+  end
+  
+  def new
+     @company = Company.new
+    respond_to do |format|
+      # format.html 
+      format.js   
+    end
   end
   
   
@@ -8,7 +18,7 @@ class CompaniesController < ApplicationController
     @company = Company.create(company_params)
     @company.save
     respond_to do |format|
-      format.html {redirect_to 'companies', notice: 'You were successfully added!'}
+      format.html {redirect_to "/companies", notice: 'You were successfully added!'}
     #   format.js {}
       # format.json {render json: @vote, status: :created, location: @vote}
     end

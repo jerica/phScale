@@ -1,8 +1,18 @@
-<% Company.all.shuffle.each do |company| %>
+<body style="background:url();background-size:cover">
+<!--https://image.slidesharecdn.com/producthuntslidesharepdf-150129193507-conversion-gate02/95/what-is-product-hunt-anyway-a-product-hunt-101-2-638.jpg?cb=1422560417-->
+<div class="col-lg-10 col-lg-offset-1">
+
+<center>
+    <h1>Other Companies in the Area</h1>
+<% Company.all.shuffle.last(10).each do |company| %>
 <a href="<%=company.website%>" target="_blank">
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
     <img class="img-responsive" src="<%= imagefor(company)%>">
     <p><%=company.name%></p>
 </div>
 </a>
 <% end %>
+
+</center>
+</div>
+</body>
