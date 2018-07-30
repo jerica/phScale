@@ -1,0 +1,24 @@
+<h2>Let the World (Atlanta) know about your product.</h2>
+<p>By submiting this entry, you will be entered into the runnings for the Cool Phactor Pitch Competition. You will also be entered into the runnings to win a $1000 prize at the end of 2018.</p>
+<div class="col-lg-8 col-lg-offset-2">
+<%= form_for Company.new do |f| %>
+<%=f.text_field :name, class:"text-line", placeholder:"company name here *", :required => true %>
+<%=f.text_field :website, class:"text-line", placeholder:"company website here" %>
+<%=f.text_field :logo, class:"text-line", placeholder:"logo url here" %>
+<%=f.text_field :contact, class:"text-line", placeholder:"your name here *", :required => true %>
+<%=f.text_field :number, class:"text-line", placeholder:"your phone number here" %>
+<%=f.hidden_field :selected_answers, class:"selected-answers"%>
+<%=f.hidden_field :score, class:"score" %>
+<%=f.text_field :email, class:"text-line", placeholder:"your email here *", :required => true %>
+<%=f.text_area :description, class:"text-line", placeholder:"what does your company do? *", :required => true %>
+<%=f.text_area :address, class:"text-line", placeholder:"company address here" %>
+<%= f.submit "Add", class:"btn btn-primary btn-lg"%>
+<br>
+<br>
+<br>
+<% end %>
+</div>
+<script>
+    $(".selected-answers").val( $(".myAnswers").text().trim() )
+    $(".score").val( (phScore))
+</script>

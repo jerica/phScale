@@ -1,0 +1,8 @@
+<% Company.all.shuffle.each do |company| %>
+<a href="<%=company.website%>" target="_blank">
+<div class="col-lg-3">
+    <img class="img-responsive" src="<%= imagefor(company)%>">
+    <p><%=company.name%></p>
+</div>
+</a>
+<% end %>
